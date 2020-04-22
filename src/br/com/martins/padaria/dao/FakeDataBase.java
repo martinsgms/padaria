@@ -8,12 +8,16 @@ import br.com.martins.padaria.model.Cliente;
 public class FakeDataBase {
     
     private static List<Cliente> clientes = new ArrayList<Cliente>();
-    private Integer idGenerator = 0;
+    private static Integer idGenerator = 0;
     
     public void create(Cliente cliente) {
         
-        cliente.setId(idGenerator++);
+        cliente.setId(++idGenerator);
         clientes.add(cliente);
+    }
+
+    public List<Cliente> findAll() {
+        return clientes;
     }
     
 }

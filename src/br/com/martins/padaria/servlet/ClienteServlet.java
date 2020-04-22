@@ -1,7 +1,6 @@
 package br.com.martins.padaria.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,17 +17,18 @@ public class ClienteServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	    request.setAttribute("clientes", new FakeDataBase().findAll());
 	    request.getRequestDispatcher("/clientes.jsp").forward(request, response);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 	    String nome = request.getParameter("nome");
 	    
         new FakeDataBase().create(new Cliente(nome));
+        
+        request.setAttribute("clientes", new FakeDataBase().findAll());
+	    request.getRequestDispatcher("/clientes.jsp").forward(request, response);
 	    
-	    PrintWriter writer = response.getWriter();
-	    writer.println("Cliente " + nome + " cadastrado com sucesso!");
 	}
 
 }
