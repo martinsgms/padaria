@@ -1,3 +1,3 @@
 # padaria
 
-estudo de JSP
+estudo sobre Servlet e JSP
