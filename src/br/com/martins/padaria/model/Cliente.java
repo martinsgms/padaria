@@ -6,11 +6,11 @@ public class Cliente {
     
     private Integer id;
     private String nome;
-    private Date dataCadastro;
+    private Date dataNascimento;
     
-    public Cliente(String nome, Date dataCadastro) {
+    public Cliente(String nome, Date dataNascimento) {
         this.nome = nome;
-        this.dataCadastro = dataCadastro;
+        this.dataNascimento = dataNascimento;
     }
     
     public Integer getId() {
@@ -28,13 +28,13 @@ public class Cliente {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    
-    public Date getDataCadastro() {
-        return dataCadastro;
+
+    public Date getDataNascimento() {
+        return dataNascimento;
     }
 
-    public void setDataCadastro(Date dataCadastro) {
-        this.dataCadastro = dataCadastro;
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
     
 }
