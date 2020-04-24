@@ -34,13 +34,18 @@
                 </tr>
             </thead>
             <tbody>
-                <c:forEach items="${clientes}" var="c">
-                    <tr>
-                        <td>${c.id}</td>
-                        <td>${c.nome}</td>
-                        <td><fmt:formatDate value="${c.dataCadastro}"/></td>
-                    </tr>
-                </c:forEach>
+                <c:if test="${empty clientes}">
+                     <tr><td colspan="3">Nenhum cliente cadastrado</td></tr>
+                </c:if>
+                <c:if test="${not empty clientes}">
+                    <c:forEach items="${clientes}" var="c">
+                        <tr>
+                            <td>${c.id}</td>
+                            <td>${c.nome}</td>
+                            <td><fmt:formatDate value="${c.dataCadastro}"/></td>
+                        </tr>
+                    </c:forEach>
+                </c:if>
             </tbody>
         </table>
     </body>
