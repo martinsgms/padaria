@@ -24,7 +24,7 @@
             </thead>
             <tbody>
                 <c:if test="${empty clientes}">
-                     <tr><td colspan="3">Nenhum cliente cadastrado</td></tr>
+                     <tr><td colspan="4">Nenhum cliente cadastrado</td></tr>
                 </c:if>
                 <c:if test="${not empty clientes}">
                     <c:forEach items="${clientes}" var="c">
@@ -32,7 +32,7 @@
                             <td>${c.id}</td>
                             <td>${c.nome}</td>
                             <td><fmt:formatDate value="${c.dataNascimento}"/></td>
-                            <td><a href="#">Editar</a> <a href="#">Excluir</a></td>
+                            <td><a href="/padaria/cliente/edicao?id=${c.id}">Editar</a> <a href="/padaria/cliente/excluir?id=${c.id}">Excluir</a></td>
                         </tr>
                     </c:forEach>
                 </c:if>
