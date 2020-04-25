@@ -7,7 +7,7 @@
     </head>
     <body>
         <h3>Editar</h3>
-        <form method="post" action="/padaria/cliente/editar">
+        <form method="post" action="/padaria/cliente?acao=EditarCliente">
             <label for="id">Id:</label> 
             <input id="id" name="id" value="${cliente.id}" type="text" readonly>
             
