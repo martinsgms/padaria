@@ -7,7 +7,7 @@
     </head>
     <body>
         <h3>Cadastro</h3>
-        <form method="post" action="/padaria/cliente/cadastro">
+        <form method="post" action="/padaria/cliente?acao=NovoCliente">
             <label for="nome">Nome:</label> 
             <input id="nome" name="nome" type="text">
             
