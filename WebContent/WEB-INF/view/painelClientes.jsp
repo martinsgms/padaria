@@ -32,7 +32,10 @@
                             <td>${c.id}</td>
                             <td>${c.nome}</td>
                             <td><fmt:formatDate value="${c.dataNascimento}"/></td>
-                            <td><a href="/padaria/cliente?acao=MostrarCliente&id=${c.id}">Editar</a> <a href="/padaria/cliente/excluir?id=${c.id}">Excluir</a></td>
+                            <td>
+                                <a href="/padaria/cliente?acao=MostrarCliente&id=${c.id}">Editar</a> 
+                                <a href="/padaria/cliente?acao=RemoveCliente&id=${c.id}">Excluir</a>
+                            </td>
                         </tr>
                     </c:forEach>
                 </c:if>
