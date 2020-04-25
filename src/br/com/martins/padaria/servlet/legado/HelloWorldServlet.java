@@ -1,4 +1,4 @@
-package br.com.martins.padaria.servlet;
+package br.com.martins.padaria.servlet.legado;
 
 import java.io.IOException;
 

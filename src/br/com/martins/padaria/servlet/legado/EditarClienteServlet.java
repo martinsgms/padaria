@@ -1,4 +1,4 @@
-package br.com.martins.padaria.servlet;
+package br.com.martins.padaria.servlet.legado;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -14,29 +14,28 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.martins.padaria.dao.FakeDataBase;
 import br.com.martins.padaria.model.Cliente;
 
-@WebServlet("/cliente/cadastro")
-public class CadastroClienteServlet extends HttpServlet {
-
+@WebServlet("/cliente/editar")
+public class EditarClienteServlet extends HttpServlet {
+   
     private static final long serialVersionUID = 1L;
-    
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/cadastroClientes.jsp").forward(request, response);
-    }
+    private FakeDataBase dao = new FakeDataBase();
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        Integer id = Integer.parseInt(request.getParameter("id"));
         String nome = request.getParameter("nome");
         String dataNascimento = request.getParameter("dataNascimento");
 
         Date dataNascimentoFormatada = formatarData(dataNascimento);
 
-        new FakeDataBase().create(new Cliente(nome, dataNascimentoFormatada));
+        Cliente cliente = dao.findById(id);
+        cliente.setNome(nome);
+        cliente.setDataNascimento(dataNascimentoFormatada);
         
         response.sendRedirect("painel");
     }
-
+    
     private Date formatarData(String data) {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         Date dataFormatada = null;
