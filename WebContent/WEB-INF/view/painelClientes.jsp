@@ -11,7 +11,7 @@
     </head>
     <body>
         <h3>Clientes cadastrados</h3>
-        <a href="/padaria/cliente/cadastro">Cadastrar novo</a>
+        <a href="/padaria/cliente?acao=NovoClienteForm">Cadastrar novo</a>
         <br><br>
         <table>
             <thead>
