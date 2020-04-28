@@ -2,6 +2,7 @@ package br.com.martins.padaria.acao;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.martins.padaria.dao.FakeDataBase;
 import br.com.martins.padaria.model.Usuario;
@@ -20,6 +21,10 @@ public class Login implements Acao {
         
         if (usuario == null)
             return "redirect:cliente?acao=LoginForm";
+        
+        HttpSession session = request.getSession();
+        
+        session.setAttribute("currentUser", usuario);
         
         return "redirect:cliente?acao=ListaClientes";
     }

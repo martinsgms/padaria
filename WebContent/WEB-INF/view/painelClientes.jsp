@@ -11,6 +11,10 @@
     </head>
     <body>
         <h3>Clientes cadastrados</h3>
+        
+        <p>Usuário: ${currentUser.login}</p>
+        <br><br>
+        
         <a href="/padaria/cliente?acao=NovoClienteForm">Cadastrar novo</a>
         <br><br>
         <table>
