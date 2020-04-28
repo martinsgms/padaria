@@ -6,6 +6,8 @@
         <title>Padaria :: Clientes - Edição</title>
     </head>
     <body>
+        <c:import url="header.jsp"/>
+        
         <h3>Editar</h3>
         <form method="post" action="/padaria/cliente?acao=EditarCliente">
             <label for="id">Id:</label> 

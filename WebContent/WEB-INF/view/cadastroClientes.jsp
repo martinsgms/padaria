@@ -6,6 +6,8 @@
         <title>Padaria :: Clientes - Cadastro</title>
     </head>
     <body>
+        <c:import url="header.jsp"/>
+        
         <h3>Cadastro</h3>
         <form method="post" action="/padaria/cliente?acao=NovoCliente">
             <label for="nome">Nome:</label> 

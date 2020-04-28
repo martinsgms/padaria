@@ -10,10 +10,9 @@
         <title>Padaria :: Clientes - Painel</title>
     </head>
     <body>
-        <h3>Clientes cadastrados</h3>
+        <c:import url="header.jsp"/>
         
-        <p>Usuário: ${currentUser.login}</p>
-        <br><br>
+        <h3>Clientes cadastrados</h3>
         
         <a href="/padaria/cliente?acao=NovoClienteForm">Cadastrar novo</a>
         <br><br>
