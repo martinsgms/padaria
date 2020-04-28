@@ -10,7 +10,9 @@ import br.com.martins.padaria.model.Cliente;
 import br.com.martins.padaria.util.DateUtils;
 
 public class NovoCliente implements Acao {
-
+    
+    private FakeDataBase dao = new FakeDataBase();
+    
     public String executa(HttpServletRequest request, HttpServletResponse response) {
 
         String nome = request.getParameter("nome");
@@ -18,7 +20,7 @@ public class NovoCliente implements Acao {
 
         Date dataNascimentoFormatada = DateUtils.parseToDefault(dataNascimento);
 
-        new FakeDataBase().create(new Cliente(nome, dataNascimentoFormatada));
+        dao.create(new Cliente(nome, dataNascimentoFormatada));
         
         return "redirect:cliente?acao=ListaClientes";
     }
