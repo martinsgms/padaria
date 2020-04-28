@@ -4,7 +4,7 @@
         <title>Padaria :: Login</title>
     </head>
     <body>
-        <h3>Cadastro</h3>
+        <h3>:: Sistema da Padaria ::</h3>
         <form method="post" action="/padaria/cliente?acao=Login">
             <label for="login">Usuário:</label> 
             <input id="login" name="login" type="text">
