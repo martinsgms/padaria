@@ -7,11 +7,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import br.com.martins.padaria.acao.Acao;
 
-@WebServlet("/cliente")
+//@WebServlet("/cliente")
 public class ClienteServlet extends HttpServlet {
 	
     private static final String VIEW_PATH = "WEB-INF/view/";
@@ -19,16 +18,7 @@ public class ClienteServlet extends HttpServlet {
        
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    
-	    HttpSession session = request.getSession();
-
 	    String acao = request.getParameter("acao");
-	    boolean isAcaoProtegida = !(acao.equals("Login") || acao.equals("LoginForm"));
-	    
-	    if (isAcaoProtegida && session.getAttribute("currentUser") == null) {
-	        response.sendRedirect("cliente?acao=LoginForm");
-	        return;
-	    }
-		
 	    String rawPostAction = null;
 	    
 	    try {
