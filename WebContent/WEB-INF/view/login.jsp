@@ -3,6 +3,7 @@
         <meta charset="ISO-8859-1">
         <title>Padaria :: Login</title>
     </head>
+    
     <body>
         <h3>:: Sistema da Padaria ::</h3>
         <form method="post" action="/padaria/cliente?acao=Login">
@@ -14,5 +15,9 @@
             
             <input type="submit" value="Entrar">
         </form>
+        <p>
+            Ainda não é Usuário?
+                <a href="/padaria/cliente?acao=NovoClienteForm">Cadastre-se agora!</a>
+        </p>
     </body>
 </html>
